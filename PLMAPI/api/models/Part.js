@@ -32,8 +32,8 @@ module.exports = {
       owner:{
             model:'user'
        },
-      partBOMs: {
-          collection: 'PartRelationship',
+      partBOMRelationships: {
+          collection: 'PartBOMRelationship',
           via: 'parentParts'
       },
       referencedPart:{

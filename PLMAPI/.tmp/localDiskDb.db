@@ -1,0 +1,269 @@
+{
+  "data": {
+    "account": [],
+    "document": [],
+    "part": [
+      {
+        "number": "04304347",
+        "name": "Wheel",
+        "state": "draft",
+        "description": "test wheel",
+        "createdAt": "2015-11-22T20:23:23.797Z",
+        "updatedAt": "2015-11-22T20:23:23.797Z",
+        "id": 1
+      }
+    ],
+    "partrelationship": [],
+    "passport": [],
+    "user": [],
+    "webinarz": [],
+    "document_partusage__part_partdocuments": []
+  },
+  "schema": {
+    "account": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "document": {
+      "account": {
+        "type": "integer",
+        "model": "account",
+        "foreignKey": true,
+        "alias": "account"
+      },
+      "number": {
+        "type": "string",
+        "unique": true
+      },
+      "state": {
+        "type": "string",
+        "enum": [
+          "draft",
+          "in review",
+          "released",
+          "in change",
+          "superseded",
+          "obsolete"
+        ],
+        "defaultsTo": "draft"
+      },
+      "description": {
+        "type": "text"
+      },
+      "name": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "owner"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "part": {
+      "account": {
+        "type": "integer",
+        "model": "account",
+        "foreignKey": true,
+        "alias": "account"
+      },
+      "number": {
+        "type": "string",
+        "unique": true
+      },
+      "state": {
+        "type": "string",
+        "enum": [
+          "draft",
+          "in review",
+          "released",
+          "in change",
+          "superseded",
+          "obsolete"
+        ],
+        "defaultsTo": "draft"
+      },
+      "description": {
+        "type": "text"
+      },
+      "name": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "owner"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "partrelationship": {
+      "partReference": {
+        "type": "integer",
+        "model": "part",
+        "foreignKey": true,
+        "alias": "partReference",
+        "via": "referencedPart"
+      },
+      "parentParts": {
+        "type": "integer",
+        "model": "part",
+        "foreignKey": true,
+        "alias": "parentParts"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "passport": {
+      "protocol": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "accessToken": {
+        "type": "string"
+      },
+      "provider": {
+        "type": "string"
+      },
+      "identifier": {
+        "type": "string"
+      },
+      "tokens": {
+        "type": "json"
+      },
+      "user": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "user"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "user": {
+      "username": {
+        "type": "string",
+        "unique": true
+      },
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "webinarz": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "document_partusage__part_partdocuments": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "document_partUsage": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "document",
+        "on": "id",
+        "via": "part_partDocuments"
+      },
+      "part_partDocuments": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "part",
+        "on": "id",
+        "via": "document_partUsage"
+      }
+    }
+  },
+  "counters": {
+    "account": {},
+    "document": {},
+    "part": {
+      "id": 1
+    },
+    "partrelationship": {},
+    "passport": {},
+    "user": {},
+    "webinarz": {},
+    "document_partusage__part_partdocuments": {}
+  }
+}

@@ -55,5 +55,7 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+  
+  'put /part/:id/addPartBOMRelationship': 'PartController.addPartBomRelationship'
 
 };
