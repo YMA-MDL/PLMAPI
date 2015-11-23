@@ -34,17 +34,21 @@ module.exports = {
        },
       partBOMRelationships: {
           collection: 'PartBOMRelationship',
-          via: 'parentParts'
+          via: 'parentPart'
       },
       referencedPart:{
-          collection: 'PartRelationship',
+          collection: 'PartBOMRelationship',
           via: 'partReference'
       },
       partDocuments : {
           collection: 'document',
           via: 'partUsage',
           dominant: true
+      },
+      Alias : function(){
+        return this.number + ' - ' + this.name;
       }
+      
   }
 };
 

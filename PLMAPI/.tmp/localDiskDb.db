@@ -1,7 +1,9 @@
 {
   "data": {
+    "partrelationship": [],
     "account": [],
     "document": [],
+    "file": [],
     "part": [
       {
         "number": "04304347",
@@ -11,15 +13,141 @@
         "createdAt": "2015-11-22T20:23:23.797Z",
         "updatedAt": "2015-11-22T20:23:23.797Z",
         "id": 1
+      },
+      {
+        "name": "part test",
+        "number": "75947H5I4",
+        "state": "draft",
+        "createdAt": "2015-11-23T15:48:54.776Z",
+        "updatedAt": "2015-11-23T15:48:54.776Z",
+        "id": 2
+      },
+      {
+        "name": "part test",
+        "number": "75947H5I434",
+        "state": "draft",
+        "createdAt": "2015-11-23T15:49:50.122Z",
+        "updatedAt": "2015-11-23T15:49:50.122Z",
+        "id": 3
       }
     ],
-    "partrelationship": [],
+    "partbomrelationship": [
+      {
+        "createdAt": "2015-11-23T15:44:54.050Z",
+        "updatedAt": "2015-11-23T15:44:54.050Z",
+        "id": 1
+      },
+      {
+        "partReference": 2,
+        "parentParts": 1,
+        "createdAt": "2015-11-23T15:51:08.141Z",
+        "updatedAt": "2015-11-23T15:51:08.141Z",
+        "id": 2
+      },
+      {
+        "partReference": 3,
+        "parentParts": 1,
+        "createdAt": "2015-11-23T15:52:55.286Z",
+        "updatedAt": "2015-11-23T15:52:55.286Z",
+        "id": 3
+      },
+      {
+        "partReference": 2,
+        "Quantity": "3",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T16:10:05.707Z",
+        "updatedAt": "2015-11-23T16:10:05.707Z",
+        "id": 4
+      },
+      {
+        "partReference": 2,
+        "Quantity": "4",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T16:10:50.991Z",
+        "updatedAt": "2015-11-23T16:10:50.991Z",
+        "id": 5
+      },
+      {
+        "partReference": 2,
+        "Quantity": "4",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T16:11:21.396Z",
+        "updatedAt": "2015-11-23T16:11:21.396Z",
+        "id": 6
+      },
+      {
+        "partReference": 2,
+        "Quantity": "4",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T16:11:44.985Z",
+        "updatedAt": "2015-11-23T16:11:44.985Z",
+        "id": 7
+      },
+      {
+        "partReference": 2,
+        "Quantity": "10",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T17:08:25.814Z",
+        "updatedAt": "2015-11-23T17:08:25.814Z",
+        "id": 8
+      },
+      {
+        "partReference": 2,
+        "Quantity": "10",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T17:08:51.605Z",
+        "updatedAt": "2015-11-23T17:08:51.605Z",
+        "id": 9
+      },
+      {
+        "partReference": 2,
+        "Quantity": "3",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T17:12:42.690Z",
+        "updatedAt": "2015-11-23T17:12:42.690Z",
+        "id": 10
+      }
+    ],
     "passport": [],
     "user": [],
     "webinarz": [],
     "document_partusage__part_partdocuments": []
   },
   "schema": {
+    "partrelationship": {
+      "partReference": {
+        "type": "integer",
+        "model": "part",
+        "foreignKey": true,
+        "alias": "partReference",
+        "via": "referencedPart"
+      },
+      "parentParts": {
+        "type": "integer",
+        "model": "part",
+        "foreignKey": true,
+        "alias": "parentParts"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
     "account": {
       "id": {
         "type": "integer",
@@ -82,6 +210,20 @@
         "type": "datetime"
       }
     },
+    "file": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
     "part": {
       "account": {
         "type": "integer",
@@ -130,7 +272,7 @@
         "type": "datetime"
       }
     },
-    "partrelationship": {
+    "partbomrelationship": {
       "partReference": {
         "type": "integer",
         "model": "part",
@@ -138,11 +280,11 @@
         "alias": "partReference",
         "via": "referencedPart"
       },
-      "parentParts": {
+      "parentPart": {
         "type": "integer",
         "model": "part",
         "foreignKey": true,
-        "alias": "parentParts"
+        "alias": "parentPart"
       },
       "id": {
         "type": "integer",
@@ -258,12 +400,16 @@
     "account": {},
     "document": {},
     "part": {
-      "id": 1
+      "id": 3
     },
     "partrelationship": {},
     "passport": {},
     "user": {},
     "webinarz": {},
-    "document_partusage__part_partdocuments": {}
+    "document_partusage__part_partdocuments": {},
+    "file": {},
+    "partbomrelationship": {
+      "id": 10
+    }
   }
 }
