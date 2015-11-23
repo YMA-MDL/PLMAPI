@@ -113,6 +113,42 @@
         "createdAt": "2015-11-23T17:12:42.690Z",
         "updatedAt": "2015-11-23T17:12:42.690Z",
         "id": 10
+      },
+      {
+        "partReference": 2,
+        "Quantity": "1",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T19:22:17.669Z",
+        "updatedAt": "2015-11-23T19:22:17.669Z",
+        "id": 11
+      },
+      {
+        "partReference": 2,
+        "Quantity": "1",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T19:23:12.361Z",
+        "updatedAt": "2015-11-23T19:23:12.361Z",
+        "id": 12
+      },
+      {
+        "partReference": 2,
+        "Quantity": "1",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T19:29:59.014Z",
+        "updatedAt": "2015-11-23T19:29:59.014Z",
+        "id": 13
+      },
+      {
+        "partReference": 2,
+        "Quantity": "1",
+        "asNeeded": "false",
+        "parentPart": 1,
+        "createdAt": "2015-11-23T19:30:20.561Z",
+        "updatedAt": "2015-11-23T19:30:20.561Z",
+        "id": 14
       }
     ],
     "passport": [],
@@ -409,7 +445,7 @@
     "document_partusage__part_partdocuments": {},
     "file": {},
     "partbomrelationship": {
-      "id": 10
+      "id": 14
     }
   }
 }
