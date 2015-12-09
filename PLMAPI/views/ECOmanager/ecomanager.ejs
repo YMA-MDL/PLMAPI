@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Part Manager</a>
+    </div>
+    <div id="navbar" class=" collapse navbar-collapse">
+        <p class="navbar-text navbar-right"> <a href="/" class="navbar-link"> <span class="glyphicon glyphicon-th-large" /></a></p>
+        <p class="navbar-text navbar-right">Signed in as <a href="/user/" class="navbar-link">test</a></p>
+        <p class="navbar-text "> <a href="" class="navbar-link"> <img class="img-responsive" alt='addEco' src="images/plus_128.svg"  /></a></p>
+    </div>
+  </div>
+</nav>
+<div  ng-app="plmapi">
+    <table ng-controller="ecoCtrl" class="table table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>Part #</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Created On</th>
+                <th>Modified On</th>
+                <th>Managed By</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr ng-repeat="eco in ecos">
+                <td style="white-space: nowrap;">{{eco.ecoNumber}}</td>
+                <td>{{eco.name}}</td>
+                <td>{{eco.description}}</td>
+                <td class='date'>{{eco.createdAt}}</td>
+                <td class='date'>{{eco.updatedAt}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Part #</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created On</th>
+                <th>Modified On</th>
+                <th>Managed By</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

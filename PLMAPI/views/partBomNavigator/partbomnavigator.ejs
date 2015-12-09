@@ -1,0 +1,100 @@
+<div ng-app="plmapi"  >
+    <nav class="navbar navbar-default navbar-fixed-top" >
+      <div class="container-fluid" style="height:120px; background-color:#41AB6B;">
+        <div class="navbar-header" >
+          <button type="button"   class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"
+          style="height:100px;font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    	font-size: 54px;
+    	font-style: normal;
+    	font-variant: normal;
+    	font-weight: 500;
+        margin-top: 10px;
+        color: #FFF;
+    	line-height: 56.4px;">Part Manager</a>
+        </div>
+        <div id="navbar" class=" collapse navbar-collapse" >
+            <div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9a navbar-right">
+                <a href="#set-9" id='createDialogButton' title="New" class="hi-icon hi-icon-pencil" ng-click="openPartAddDialog()">New</a>
+                <a href="#set-9" id='editDialogButton' title="Edit" class="hi-icon hi-icon-cog" ng-click="">Edit</a>
+                <a href="#set-9" id='favoritegButton' title="Link" class="hi-icon hi-icon-star" ng-click="">Link</a>
+                <a href="#set-9" id='userButton' title="User" class="hi-icon hi-icon-user" ng-click="">User</a>
+                <a href="/" id='homeButton' title="Home" class="hi-icon hi-icon-location" ng-click="">Home</a>
+            </div>
+        </div>
+      </div>
+    </nav>
+    <div  ng-controller="PartCtrl" class="container-fluid"  style="margin-top:100px;">
+        <div  id="tableWrapper" ng-class="tableSpread" class="base-class">
+            <table   class=" table table-responsive table-hover table-striped table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>Part #</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Created On</th>
+                        <th>Modified On</th>
+                        <th>Managed By</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr   ng-repeat="part in parts" eltId="{{part.id}}" ng-click="click(part)" >
+                        <td style="white-space: nowrap;">{{part.partNumber}}</td>
+                        <td>{{part.name}}</td>
+                        <td>{{part.description}}</td>
+                        <td class='date'>{{part.createdAt}}</td>
+                        <td class='date'>{{part.updatedAt}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Part #</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Created On</th>
+                        <th>Modified On</th>
+                        <th>Managed By</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="modal fade" id="createPart">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+              </div>
+              <form class="form"  enctype="application/x-www-form-urlencoded">
+             <div class="modal-body" id="formAddPartBody">
+
+                     <div class="form-group">
+                         <label for="exampleInputEmail1">Part #</label>
+                         <input type="text" class="form-control" name="partNumber" placeholder="#">
+                     </div>
+                     <div class="form-group">
+                          <label for="exampleInputEmail1">Part Name</label>
+                          <input type="text" class="form-control" name="name" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Description</label>
+                          <input type="text" class="form-control" name="description" placeholder="Description">
+                      </div>
+
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               <button type="submit" class="btn btn-primary" ng-click="validateNew()" >Create</button>
+             </div>
+              </form>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+</div>

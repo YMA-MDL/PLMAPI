@@ -1,0 +1,62 @@
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Document Manager</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/">PLM API</a></li>
+      </ul>
+    <!--   <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"></a></p> -->
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+<div class="container row ">
+    <div class="" style="position: fixed;">
+        <a href="" id="addDocument">
+            <img class="img-responsive" alt='add Document' src="images/plus_128.svg" width="128" />
+        </a>
+    </div>
+</div>
+<div class="container" ng-app>
+    <table ng-controller="DocumentListController as DocumentList" class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Document #</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created On</th>
+                <th>Modified On</th>
+                <th>Managed By</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr ng-repeat="document in DocumentList.ecos">
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Document #</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created On</th>
+                <th>Modified On</th>
+                <th>Managed By</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script>
+    $("#addDocument").click(function(){
+
+    });
+</script>

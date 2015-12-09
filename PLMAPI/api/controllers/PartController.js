@@ -40,8 +40,53 @@ module.exports = {
 	    
 	    // if everything ok => update the relationship and add it to the partBomRelationships collection
 	    
-	}
+	},
 	
+	versionPart: function(req,res){
+		
+	},
+	
+	diffParts : function (req,res){
+		var jsondiffpatch = require('jsondiffpatch').create();
+		  
+		// get comparaison origin
+		var originId = req.param('leftid');
+		// get comparaison target
+		var targetId = req.param('rightid');
+		
+		var partDiff = {};
+		
+		Part.findOne(originId).populate('partBOMRelationships').exec(function(err,originPart){
+			Part.findOne(targetId).populate('partBOMRelationships').exec(function(err,targetPart){
+				// run diff feature
+				var delta = jsondiffpatch.diff(originPart, targetPart);
+				// partDiff = diff(originPart,targetPart);
+				res.json(delta);
+			});
+		});
+	},
+	updatePart : function(req,res){
+		var partId = req.param('id');
+		Part.update({'id': partId},req.allParams()).exec(function(err,part){
+			if (err){res.json(err)};
+			res.json(part);
+		});
+	},
+	getPartBOM : function(req,res){
+		var partId = req.param('id');
+		Part.findOne(partId).exec(function(err,part){
+			PartBOMRelationship.find({'parentPart':partId}).populate('partReference').exec(function(err,BOMparts){
+				part.BOMparts = BOMparts;
+				res.json(part);
+			});
+		});
+		
+	},
+	createPart : function(req,res){
+		Part.create(req.allParams()).exec(function(err,part){
+			res.json(part);
+		});
+	}
 	
 };
 

@@ -35,6 +35,7 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
+  
   'get /login': 'AuthController.login',
   'get /logout': 'AuthController.logout',
   'get /register': 'AuthController.register',
@@ -48,14 +49,19 @@ module.exports.routes = {
 
   /***************************************************************************
   *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
+  * Custom routes                                                            *
   *                                                                          *
   ***************************************************************************/
   
-  'put /part/:id/addPartBOMRelationship': 'PartController.addPartBomRelationship'
+  'put /document/:id/attachFile': 'DocumentController.attachFile',
+  
+  'post /part': 'PartController.createPart',
+  'put /part/:id': 'PartController.updatePart',
+  'put /part/:id/addPartBOMRelationship': 'PartController.addPartBomRelationship',
+  'put /part/:id/updatePartBOMRelationship': 'PartController.updatePartBOMRelationship',
+  'put /part/:id/versionPart': 'partController.versionPart',
+  'get /part/:leftid/diffParts/:rightid': 'partController.diffParts',
+  
+  'get /part/:id/BOM': 'PartController.getPartBOM'
 
 };

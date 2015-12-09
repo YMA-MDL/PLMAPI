@@ -6,6 +6,9 @@
  */
 
 module.exports = {
+    attachFile : function(req,res){
+        
+    }
 	
 };
 

@@ -15,6 +15,13 @@ module.exports = {
      parentPart: {
          model: 'part',
          required : true
+     },
+     quantity: {
+         type: 'decimal',
+         required: true
+     },
+     asNeeded: {
+         type: 'boolean'
      }
   }
 };

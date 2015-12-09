@@ -1,0 +1,55 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.mainPageCategories h2,h3{
+    text-align: center;
+}
+
+.mainPageCategories img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hi-icon-effect-6 .hi-icon {
+	box-shadow: 0 0 0 4px rgba(255,255,255,1);
+	transition: background 0.2s, color 0.2s;
+}
+
+.no-touch .hi-icon-effect-6 .hi-icon:hover {
+	background: rgba(255,255,255,1);
+	color: #64bb5d;
+}
+
+.no-touch .hi-icon-effect-6 .hi-icon:hover:before {
+	animation: spinAround 2s linear infinite;
+}
+
+@keyframes spinAround {
+	from {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* PART MANAGEMENT */
+
+.base-class {
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.baseSlideRight{
+    position: absolute;
+    opacity: 0;
+    right: 0;
+}
+
+.hiddenRight{
+}
+.slideInRight{
+    opacity: 1;
+}

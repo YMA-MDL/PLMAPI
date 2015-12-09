@@ -1,9 +1,15 @@
 {
   "data": {
     "partrelationship": [],
+    "file": [
+      {
+        "createdAt": "2015-11-30T23:00:29.949Z",
+        "updatedAt": "2015-11-30T23:00:29.949Z",
+        "id": 1
+      }
+    ],
     "account": [],
     "document": [],
-    "file": [],
     "part": [
       {
         "number": "04304347",
@@ -19,8 +25,9 @@
         "number": "75947H5I4",
         "state": "draft",
         "createdAt": "2015-11-23T15:48:54.776Z",
-        "updatedAt": "2015-11-23T15:48:54.776Z",
-        "id": 2
+        "updatedAt": "2015-12-08T16:22:37.681Z",
+        "id": 2,
+        "description": "This is a updated part"
       },
       {
         "name": "part test",
@@ -29,6 +36,89 @@
         "createdAt": "2015-11-23T15:49:50.122Z",
         "updatedAt": "2015-11-23T15:49:50.122Z",
         "id": 3
+      },
+      {
+        "number": "123",
+        "name": "Test",
+        "state": "released",
+        "description": "test",
+        "owner": null,
+        "createdAt": "2015-12-02T06:01:13.084Z",
+        "updatedAt": "2015-12-02T06:01:13.084Z",
+        "id": 4
+      },
+      {
+        "number": "9349236493",
+        "name": "Screw M5",
+        "state": "draft",
+        "description": "screw description",
+        "owner": 1,
+        "createdAt": "2015-12-08T17:47:39.527Z",
+        "updatedAt": "2015-12-08T17:47:39.527Z",
+        "id": 5
+      },
+      {
+        "number": "0327407234",
+        "name": "Screw M5",
+        "state": "draft",
+        "description": "test screw",
+        "owner": 1,
+        "createdAt": "2015-12-08T17:49:35.635Z",
+        "updatedAt": "2015-12-08T17:49:35.635Z",
+        "id": 6
+      },
+      {
+        "number": "340407307430",
+        "name": "screw M5",
+        "state": "draft",
+        "createdAt": "2015-12-08T17:54:45.125Z",
+        "updatedAt": "2015-12-08T17:54:45.125Z",
+        "id": 7
+      },
+      {
+        "number": "PART-8",
+        "description": "In occaecat excepteur do sint esse nostrud est minim id.",
+        "name": "Tasmania",
+        "state": "in change",
+        "createdAt": "2015-12-08T19:19:51.436Z",
+        "updatedAt": "2015-12-08T19:19:51.436Z",
+        "id": 8
+      },
+      {
+        "number": "PART-89",
+        "description": "In occaecat excepteur do sint esse nostrud est minim id.",
+        "name": "Tasmania",
+        "state": "in change",
+        "createdAt": "2015-12-08T19:21:22.257Z",
+        "updatedAt": "2015-12-08T19:21:22.257Z",
+        "id": 9
+      },
+      {
+        "number": "PART-829",
+        "description": "In occaecat excepteur do sint esse nostrud est minim id.",
+        "name": "Tasmania",
+        "state": "in change",
+        "createdAt": "2015-12-08T19:22:08.373Z",
+        "updatedAt": "2015-12-08T19:22:08.373Z",
+        "id": 10
+      },
+      {
+        "number": "PART-8129",
+        "description": "In occaecat excepteur do sint esse nostrud est minim id.",
+        "name": "Tasmania",
+        "state": "in change",
+        "createdAt": "2015-12-08T19:25:54.559Z",
+        "updatedAt": "2015-12-08T19:25:54.559Z",
+        "id": 11
+      },
+      {
+        "number": "PART-8329",
+        "description": "In occaecat excepteur do sint esse nostrud est minim id.",
+        "name": "Tasmania",
+        "state": "in change",
+        "createdAt": "2015-12-08T19:28:41.902Z",
+        "updatedAt": "2015-12-08T19:28:41.902Z",
+        "id": 12
       }
     ],
     "partbomrelationship": [
@@ -54,7 +144,7 @@
       {
         "partReference": 2,
         "Quantity": "3",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T16:10:05.707Z",
         "updatedAt": "2015-11-23T16:10:05.707Z",
@@ -63,7 +153,7 @@
       {
         "partReference": 2,
         "Quantity": "4",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T16:10:50.991Z",
         "updatedAt": "2015-11-23T16:10:50.991Z",
@@ -72,7 +162,7 @@
       {
         "partReference": 2,
         "Quantity": "4",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T16:11:21.396Z",
         "updatedAt": "2015-11-23T16:11:21.396Z",
@@ -81,7 +171,7 @@
       {
         "partReference": 2,
         "Quantity": "4",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T16:11:44.985Z",
         "updatedAt": "2015-11-23T16:11:44.985Z",
@@ -90,7 +180,7 @@
       {
         "partReference": 2,
         "Quantity": "10",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T17:08:25.814Z",
         "updatedAt": "2015-11-23T17:08:25.814Z",
@@ -99,7 +189,7 @@
       {
         "partReference": 2,
         "Quantity": "10",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T17:08:51.605Z",
         "updatedAt": "2015-11-23T17:08:51.605Z",
@@ -108,7 +198,7 @@
       {
         "partReference": 2,
         "Quantity": "3",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T17:12:42.690Z",
         "updatedAt": "2015-11-23T17:12:42.690Z",
@@ -117,7 +207,7 @@
       {
         "partReference": 2,
         "Quantity": "1",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T19:22:17.669Z",
         "updatedAt": "2015-11-23T19:22:17.669Z",
@@ -126,7 +216,7 @@
       {
         "partReference": 2,
         "Quantity": "1",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T19:23:12.361Z",
         "updatedAt": "2015-11-23T19:23:12.361Z",
@@ -135,7 +225,7 @@
       {
         "partReference": 2,
         "Quantity": "1",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T19:29:59.014Z",
         "updatedAt": "2015-11-23T19:29:59.014Z",
@@ -144,11 +234,29 @@
       {
         "partReference": 2,
         "Quantity": "1",
-        "asNeeded": "false",
+        "asNeeded": false,
         "parentPart": 1,
         "createdAt": "2015-11-23T19:30:20.561Z",
         "updatedAt": "2015-11-23T19:30:20.561Z",
         "id": 14
+      },
+      {
+        "partReference": 3,
+        "Quantity": "2",
+        "asNeeded": false,
+        "parentPart": 2,
+        "createdAt": "2015-12-08T16:23:38.993Z",
+        "updatedAt": "2015-12-08T16:23:38.993Z",
+        "id": 15
+      },
+      {
+        "partReference": 7,
+        "quantity": "2",
+        "asNeeded": false,
+        "parentPart": 2,
+        "createdAt": "2015-12-09T22:35:22.161Z",
+        "updatedAt": "2015-12-09T22:35:22.161Z",
+        "id": 16
       }
     ],
     "passport": [],
@@ -171,6 +279,20 @@
         "foreignKey": true,
         "alias": "parentParts"
       },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "file": {
       "id": {
         "type": "integer",
         "autoIncrement": true,
@@ -246,20 +368,6 @@
         "type": "datetime"
       }
     },
-    "file": {
-      "id": {
-        "type": "integer",
-        "autoIncrement": true,
-        "primaryKey": true,
-        "unique": true
-      },
-      "createdAt": {
-        "type": "datetime"
-      },
-      "updatedAt": {
-        "type": "datetime"
-      }
-    },
     "part": {
       "account": {
         "type": "integer",
@@ -321,6 +429,12 @@
         "model": "part",
         "foreignKey": true,
         "alias": "parentPart"
+      },
+      "quantity": {
+        "type": "string"
+      },
+      "asNeeded": {
+        "type": "boolean"
       },
       "id": {
         "type": "integer",
@@ -436,16 +550,18 @@
     "account": {},
     "document": {},
     "part": {
-      "id": 3
+      "id": 12
     },
     "partrelationship": {},
     "passport": {},
     "user": {},
     "webinarz": {},
     "document_partusage__part_partdocuments": {},
-    "file": {},
+    "file": {
+      "id": 1
+    },
     "partbomrelationship": {
-      "id": 14
+      "id": 16
     }
   }
 }
