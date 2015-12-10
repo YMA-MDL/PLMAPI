@@ -13,7 +13,6 @@ module.exports = {
       },
       number: {
           type: 'string',
-          unique: true,
           required: true
       },
       state: {
@@ -45,8 +44,17 @@ module.exports = {
           via: 'partUsage',
           dominant: true
       },
+      isVersionnedBy:{
+        collection: 'part',
+        via: 'isVersionOf',
+        dominant: true
+      },
       Alias : function(){
         return this.number + ' - ' + this.name;
+      },
+      isVersionOf:{
+        collection : 'part',
+          via : 'isVersionnedBy'
       }
       
   }

@@ -62,6 +62,7 @@ module.exports.routes = {
   'put /part/:id/versionPart': 'partController.versionPart',
   'get /part/:leftid/diffParts/:rightid': 'partController.diffParts',
   
-  'get /part/:id/BOM': 'PartController.getPartBOM'
+  'get /part/:id/BOM': 'PartController.getPartBOM',
+  'put /part/:id/version': 'PartController.versionPart'
 
 };

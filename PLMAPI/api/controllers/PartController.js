@@ -86,6 +86,35 @@ module.exports = {
 		Part.create(req.allParams()).exec(function(err,part){
 			res.json(part);
 		});
+	},
+	versionPart : function(req,res){
+		var partversionning = {};
+		var partId = req.param('id');
+		
+		Part.findOne(partId).populate('isVersionnedBy').exec(function(err,oldPart){
+			if (oldPart){
+				// clone the oldpart
+				var newPart =JSON.parse(JSON.stringify(oldPart));
+				newPart.majorRev = req.param('majorRev');
+				newPart.minorRev =  req.param('minorRev');
+				newPart.iteration =  req.param('iteration');
+				newPart.state = 'draft';
+				delete newPart.id;
+				newPart.isVersionnedBy = [];
+				oldPart.isVersionnedBy.add(newPart);
+				oldPart.save(function(err){
+					if (err){res.badRequest(err)}
+						var partVersionning = {};
+						partVersionning.oldPart = oldPart;
+						partVersionning.newPart = newPart;
+						
+						res.json(partVersionning);
+				});
+	
+			} else {
+				res.badRequest("part version id does not exist");
+			}
+		});	
 	}
 	
 };
