@@ -47,6 +47,21 @@ module.exports.routes = {
   'get /auth/:provider/callback': 'AuthController.callback',
   'get /auth/:provider/:action': 'AuthController.callback',
 
+  /*****************************
+  *                            *
+  * Account & User Management  *
+  *                            * 
+  * ***************************/
+   
+  '/accountmanagement': {
+    view: 'accounts'
+  }, 
+   
+  'get /accounts': 'AccountController.getAccountList',
+  'get /account/:id': 'AccountController.getAccountDetail',
+  'post /accounts': 'AccountController.createAccount',
+  
+  
   /***************************************************************************
   *                                                                          *
   * Custom routes                                                            *
@@ -63,6 +78,17 @@ module.exports.routes = {
   'get /part/:leftid/diffParts/:rightid': 'partController.diffParts',
   
   'get /part/:id/BOM': 'PartController.getPartBOM',
-  'put /part/:id/version': 'PartController.versionPart'
+  'put /part/:id/version': 'PartController.versionPart',
 
+
+  /***************************************************************************
+  *                                                                          *
+  * Sample Modules                                                           *
+  *                                                                          *
+  ***************************************************************************/
+
+
+  '/partBomNavigator': {
+    view: 'partBomNavigator/partbomnavigator'
+  }, 
 };

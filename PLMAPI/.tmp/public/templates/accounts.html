@@ -1,0 +1,80 @@
+<h1>Account Management</h1>
+
+<div class="col-md-6">
+    <table class="table table-responsive table-hover table-condensed table-bordered" id="accounts">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>account type</th>
+                <th>access info</th>
+                <th># users</th>
+                <th>since</th>
+                <th>last login</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat='account in accounts' ng-click='selectAccount(account)' ng-class="account.id == selectedAccount ? 'info':''" id="{{account.id}}">
+                <td>{{account.name}}</td>
+                <td>{{account.type}}</td>
+                <td>token :{{account.token}}</td>
+                <td>{{account.nbUsers}}</td>
+                <td>{{account.createdSince | date:'medium'}}</td>
+                <td>{{account.lastLogin | date:'medium'}}</td>
+            </tr>
+            <form novalidate>
+                <tr>
+                    <td><input type='text' ng-model="newaccount.name"></td>
+                    <td>
+                        <select ng-model="newaccount.type">
+                            <option>enterprise</option>
+                            <option>professionnal</option>
+                            <option>free</option>
+                        </select>
+                    </td>
+                    <td><input type='text' ng-model="newaccount.token" ></td>
+                    <td></td>
+                    <td></td>
+                    <td> <input type="submit" name="" value="Add Account" ng-click="addAccount(newaccount)"/></td>
+                </tr>
+            </form>
+        </tbody>
+    </table>
+</div>
+<div class="col-md-6">
+    <table class="table table-responsive table-hover  table-condensed table-bordered"  id="users">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>login</th>
+                <th>user type</th>
+                <th>since</th>
+                <th>last login</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat='user in users' ng-show="user.account.id == selectedAccount" ng-class="user.type == 'accountAdmin' ? 'success':'info'" ng-click='userDetail()'>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.type}}</td>
+                <td>{{user.createdSince}}</td>
+                <td>{{user.lastLogin}}</td>
+            </tr>
+            <form novalidate>
+                <tr ng-show="selectedAccount !== '0'">
+                    <td><input type='text' ng-model="newuser.username" required ></td>
+                    <td><input type='email' ng-model="newuser.email" required ></td>
+                    <td>
+                        <select ng-model="newuser.type" required >
+                            <option value="viewer">viewer</option>
+                            <option value="user">user</option>
+                            <option value="accountAdmin">accountAdmin</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td> <input type="submit" name="" value="Add Account" ng-click="addUser(newuser)"/></td>
+                </tr>
+            </form>
+        </tbody>
+    </table>
+</div>
+

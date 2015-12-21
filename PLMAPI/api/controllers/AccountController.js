@@ -6,6 +6,16 @@
  */
 
 module.exports = {
-	
+	getAccountList : function(req,res){
+	    Account.find().exec(function(err,data){
+	        res.json(data);
+	    });
+	},
+	getAccountDetail : function(req,res){
+	    
+	},
+	createAccount : function(req,res){
+	    
+	}
 };
 

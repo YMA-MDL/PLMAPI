@@ -10,8 +10,16 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">PLM API</a>
+            <ul class="nav navbar-nav">
+          <% if ( session.authenticated ){ %>
+              <li><a href="accountmanagement" class="nav">account management</a></li>
+              <li><a href="logout" class="nav">logout</a></li>
+          <% } else { %>
+           <li><a href="login" class="nav">login</a></li>
+           <li><a href="register" class="nav">register</a></li>
+          <% } %>
+            </u>
         </div>
-
       </div>
     </nav>
 
@@ -51,32 +59,61 @@
               <img src="images/register_256.png" alt="API Documentation" class="img-rounded img-responsive">
           </a>
         </div>
-      </div>
-<!--
-      <hr>
-      <div class="row">
-          <h2> Sample Applications </h2>
+      </div
+      
+
+      <% if ( session.authenticated ){ %>
+           
+        <hr>
+          <div class="row">
+            <h2> Sample Applications </h2>
+            <div class="col-md-4 mainPageCategories" >
+            <h3 >Part BOM navigator</h3>
+            <a href="/partBomNavigator">
+                <img src="images/part_256.png" alt="API Documentation" class="img-rounded img-responsive">
+            </a>
+          </div>
           <div class="col-md-4 mainPageCategories" >
-          <h3 >Part BOM navigator</h3>
-          <a href="/partBomNavigator">
-              <img src="images/part_256.png" alt="API Documentation" class="img-rounded img-responsive">
-          </a>
+            <h3 >Document Manager - in progress</h3>
+              <a href="#">
+                <img src="images/document_256.png" alt="Github Project" class="img-rounded img-responsive">
+              </a>
+          </div>
+          <div class="col-md-4 mainPageCategories" >
+            <h3>ECO manager - in progress</h3>
+            <a href="#">
+            <img  src="images/eco_256.png" alt="Blog" class="img-rounded img-responsive">
+              </a>
+          </div>
         </div>
-        <div class="col-md-4 mainPageCategories" >
-          <h3 >Document Manager</h3>
-            <a href="/documentManager">
-              <img src="images/document_256.png" alt="Github Project" class="img-rounded img-responsive">
-            </a>
-       </div>
-        <div class="col-md-4 mainPageCategories" >
-          <h3>ECO manager</h3>
-          <a href="/ecoManager">
-          <img  src="images/eco_256.png" alt="Blog" class="img-rounded img-responsive">
-            </a>
-        </div>
-      </div>
       <hr>
--->
+ <% } else { %>
+       
+        <hr/>
+          <div class="row">
+            <h2> Sample Applications </h2>
+            <div class="col-md-4 mainPageCategories" >
+            <h3 >Part BOM navigator</h3>
+            <a href="/login" disabled>
+                <img src="images/part_256.png" alt="API Documentation" class="img-rounded img-responsive">
+            </a>
+          </div>
+          <div class="col-md-4 mainPageCategories" >
+            <h3 >Document Manager - in progress</h3>
+              <a href="/">
+                <img src="images/document_256.png" alt="Github Project" class="img-rounded img-responsive">
+              </a>
+          </div>
+          <div class="col-md-4 mainPageCategories" >
+            <h3>ECO manager - in progress</h3>
+            <a href="/">
+            <img  src="images/eco_256.png" alt="Blog" class="img-rounded img-responsive">
+              </a>
+          </div>
+        </div>
+      <hr/>
+ 
+<% } %>
       <footer>
         <p>&copy; mydatalinx 2016</p>
       </footer>

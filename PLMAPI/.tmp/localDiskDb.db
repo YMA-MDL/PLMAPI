@@ -1,8 +1,6 @@
 {
   "data": {
     "partrelationship": [],
-    "account": [],
-    "document": [],
     "file": [
       {
         "createdAt": "2015-11-30T23:00:29.949Z",
@@ -10,6 +8,56 @@
         "id": 1
       }
     ],
+    "account": [
+      {
+        "name": "boeing",
+        "type": "free",
+        "createdAt": "2015-12-15T16:08:17.072Z",
+        "updatedAt": "2015-12-15T16:08:17.072Z",
+        "id": 1
+      },
+      {
+        "name": "Faurecia",
+        "type": "free",
+        "createdAt": "2015-12-15T16:09:05.691Z",
+        "updatedAt": "2015-12-15T16:09:05.691Z",
+        "id": 2
+      },
+      {
+        "name": "Michelin",
+        "type": "enterprise",
+        "createdSince": 1450196625269,
+        "createdAt": "2015-12-15T16:24:04.828Z",
+        "updatedAt": "2015-12-15T16:24:04.828Z",
+        "id": 3
+      },
+      {
+        "name": "Minerva",
+        "type": "free",
+        "createdSince": 1450196636168,
+        "createdAt": "2015-12-15T16:24:15.706Z",
+        "updatedAt": "2015-12-15T16:24:15.706Z",
+        "id": 4
+      },
+      {
+        "name": "Mydatalinx",
+        "type": "professionnal",
+        "createdSince": 1450196665297,
+        "createdAt": "2015-12-15T16:24:44.867Z",
+        "updatedAt": "2015-12-15T16:24:44.867Z",
+        "id": 5
+      },
+      {
+        "name": "Renault",
+        "type": "enterprise",
+        "createdSince": 1450218877343,
+        "createdAt": "2015-12-15T22:34:57.326Z",
+        "updatedAt": "2015-12-15T22:34:57.326Z",
+        "id": 6
+      }
+    ],
+    "apiaccount": [],
+    "document": [],
     "part": [
       {
         "number": "04304347",
@@ -339,8 +387,45 @@
         "id": 16
       }
     ],
-    "passport": [],
-    "user": [],
+    "passport": [
+      {
+        "protocol": "local",
+        "password": "$2a$10$zJ41VcCuWlyKcSJlu2OmKOCCRyb5tSjDBxPaoR8vsLMzq.af4EXpu",
+        "user": 1,
+        "accessToken": "PiKZw4B6O+GTb6Agxaam79zn9g6h1zIBtuRj/zSQJGscRhkham0CGGjjLGLVwQJo",
+        "createdAt": "2015-12-15T08:58:54.954Z",
+        "updatedAt": "2015-12-15T08:58:54.954Z",
+        "id": 1
+      }
+    ],
+    "user": [
+      {
+        "username": "yoannmaingon",
+        "email": "yoann.maingon@mydatalinx.com",
+        "usertype": "viewer",
+        "id": 1,
+        "createdAt": "2015-12-15T08:58:54.705Z",
+        "updatedAt": "2015-12-15T08:58:54.705Z"
+      },
+      {
+        "username": "jean",
+        "email": "jean@jean.com",
+        "usertype": "viewer",
+        "account": 2,
+        "id": 10,
+        "createdAt": "2015-12-15T23:14:15.653Z",
+        "updatedAt": "2015-12-15T23:14:15.653Z"
+      },
+      {
+        "username": "Francis",
+        "email": "test@test.com",
+        "usertype": "viewer",
+        "account": 2,
+        "id": 12,
+        "createdAt": "2015-12-15T23:15:50.321Z",
+        "updatedAt": "2015-12-15T23:15:50.321Z"
+      }
+    ],
     "webinarz": [],
     "document_partusage__part_partdocuments": [],
     "part_isversionof__part_isversionnedby": [
@@ -454,7 +539,51 @@
         "type": "datetime"
       }
     },
+    "file": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
     "account": {
+      "name": {
+        "type": "string",
+        "unique": true
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "enterprise",
+          "professionnal",
+          "free"
+        ],
+        "defaultsTo": "free"
+      },
+      "lastLogin": {
+        "type": "date"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "apiaccount": {
       "id": {
         "type": "integer",
         "autoIncrement": true,
@@ -503,20 +632,6 @@
         "foreignKey": true,
         "alias": "owner"
       },
-      "id": {
-        "type": "integer",
-        "autoIncrement": true,
-        "primaryKey": true,
-        "unique": true
-      },
-      "createdAt": {
-        "type": "datetime"
-      },
-      "updatedAt": {
-        "type": "datetime"
-      }
-    },
-    "file": {
       "id": {
         "type": "integer",
         "autoIncrement": true,
@@ -657,6 +772,22 @@
         "type": "string",
         "unique": true
       },
+      "usertype": {
+        "type": "string",
+        "enum": [
+          "apiAdmin",
+          "accountAdmin",
+          "user",
+          "viewer"
+        ],
+        "defaultsTo": "viewer"
+      },
+      "account": {
+        "type": "integer",
+        "model": "account",
+        "foreignKey": true,
+        "alias": "account"
+      },
       "id": {
         "type": "integer",
         "autoIncrement": true,
@@ -730,14 +861,20 @@
     }
   },
   "counters": {
-    "account": {},
+    "account": {
+      "id": 6
+    },
     "document": {},
     "part": {
       "id": 23
     },
     "partrelationship": {},
-    "passport": {},
-    "user": {},
+    "passport": {
+      "id": 1
+    },
+    "user": {
+      "id": 12
+    },
     "webinarz": {},
     "document_partusage__part_partdocuments": {},
     "file": {
@@ -748,6 +885,7 @@
     },
     "part_isversionof__part_isversionnedby": {
       "id": 16
-    }
+    },
+    "apiaccount": {}
   }
 }

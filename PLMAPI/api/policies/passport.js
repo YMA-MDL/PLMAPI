@@ -21,6 +21,8 @@
  * @param {Object}   res
  * @param {Function} next
  */
+ 
+ /* global passport */
 module.exports = function (req, res, next) {
   // Initialize Passport
   passport.initialize()(req, res, function () {

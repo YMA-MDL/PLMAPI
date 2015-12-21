@@ -170,7 +170,8 @@ var AuthController = {
         
         // Upon successful login, send the user to the homepage were req.user
         // will be available.
-        res.ok( {result:"successful login"});
+        //res.ok( {result:"successful login"});
+        res.redirect('/');
       });
     });
   },

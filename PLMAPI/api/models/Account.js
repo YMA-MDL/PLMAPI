@@ -8,7 +8,20 @@
 module.exports = {
 
   attributes: {
-
+    name:{
+      type: 'string',
+      unique: true,
+      required: true
+    },
+    type:{
+      type: 'string',
+          enum: ['enterprise','professionnal', 'free'],
+          defaultsTo: 'free',
+          required: true
+    },
+    lastLogin:{
+      type: 'date'
+    }
   }
 };
 

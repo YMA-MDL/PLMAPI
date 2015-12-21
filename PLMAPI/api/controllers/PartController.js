@@ -74,13 +74,13 @@ module.exports = {
 	},
 	getPartBOM : function(req,res){
 		var partId = req.param('id');
+		var depth = req.param('depth');
 		Part.findOne(partId).exec(function(err,part){
 			PartBOMRelationship.find({'parentPart':partId}).populate('partReference').exec(function(err,BOMparts){
 				part.BOMparts = BOMparts;
 				res.json(part);
 			});
 		});
-		
 	},
 	createPart : function(req,res){
 		Part.create(req.allParams()).exec(function(err,part){
